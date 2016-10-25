@@ -441,9 +441,9 @@ class DemoM3uTv extends AbstractTv
 	
        		$doc = iconv('WINDOWS-1251', 'UTF-8', $doc);
 
-		$patterns = array("/<div class=\"desc\">/", "/<div class=\"onair\">/", 
+		$patterns = array("/<a class=f0><\/a>/", "/<a class=d9><\/a>/", "/<a class=z0><\/a>/", "/<div class=\"desc\">/", "/<div class=\"onair\">/",
 			"/<div class=\"pasttime\">/", "/<div class=\"time\">/", "/<br><br>/", "/<br>/", "/&nbsp;/");
-        	$replace = array("|", "\n", "\n", "\n", ". ", ". ", "");
+			$replace = array("0", "1", "5", "|", "\n", "\n", "\n", ". ", ". ", "");
 
 		$doc = strip_tags(preg_replace($patterns, $replace, $doc));
 
